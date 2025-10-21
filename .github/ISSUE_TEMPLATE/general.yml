@@ -1,0 +1,8 @@
+name: "General Issue"
+description: Bug, typo, or site request
+labels: ["site"]
+body:
+  - type: textarea
+    id: details
+    attributes: { label: What happened? }
+    validations: { required: true }
