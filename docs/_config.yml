@@ -1,0 +1,8 @@
+title: International Wizarding Esports League
+description: Official rulebook, governance, and seasonal operations for IWEL.
+theme: jekyll-theme-cayman
+markdown: kramdown
+logo: /iwel-official/assets/logo/iwel-crest.png
+show_downloads: false
+github:
+  is_project_page: true
