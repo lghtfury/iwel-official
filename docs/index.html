@@ -90,7 +90,7 @@
 
     .hero {
       text-align: center;
-      padding: 90px 20px 70px;
+      padding: 90px 20px 50px;
     }
 
     .hero-logo {
@@ -111,20 +111,20 @@
     .hero h2 {
       font-family: var(--serif);
       color: var(--gold);
-      font-size: 2.8rem;
+      font-size: 2.4rem;
       margin-top: 10px;
     }
 
     .hero p {
       color: var(--text-muted);
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       margin-top: 10px;
     }
 
-    /* SECTIONS */
+    /* GENERIC SECTION */
 
     .section {
-      padding: 50px 24px;
+      padding: 40px 24px;
     }
 
     .section-inner {
@@ -149,90 +149,102 @@
     }
 
     .section-lead {
-      max-width: 650px;
+      max-width: 750px;
       color: var(--text-muted);
       font-size: 0.98rem;
       line-height: 1.6;
       margin-bottom: 10px;
     }
 
-    /* FLAG GRID */
+    /* IMPORTANT DATES */
 
-    .nations {
-      background: radial-gradient(circle at top, #18233f 0, #050814 60%);
+    .dates {
+      background: radial-gradient(circle at top, #141d33 0, #050814 70%);
     }
 
-    .flag-grid {
-      margin-top: 28px;
-      background: #ffffff;
-      border-radius: var(--radius);
-      border: 2px solid var(--gold);
-      padding: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    .dates-grid {
+      margin-top: 18px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
-      gap: 14px;
+      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     }
 
-    .flag-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    .date-card {
+      background: rgba(10, 15, 28, 0.95);
+      border-radius: var(--radius);
+      border: 1px solid rgba(212,184,124,0.5);
+      padding: 16px 18px;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.6);
     }
 
-    .flag-img {
-      width: 100%;
-      border-radius: 4px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    .date-label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
     }
 
-    .flag-name {
-      margin-top: 4px;
-      font-size: 0.78rem;
-      text-align: center;
-      color: #222222;
+    .date-value {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      color: var(--gold);
     }
 
-    /* CARDS */
+    /* TIMELINE */
 
-    .card-grid {
-      margin-top: 26px;
+    .timeline {
+      background: radial-gradient(circle at center, #141d33 0, #050814 70%);
+    }
+
+    .timeline-grid {
+      margin-top: 24px;
       display: grid;
       gap: 20px;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
 
-    .card {
-      background: var(--navy-light);
-      padding: 20px 18px;
+    .timeline-card {
+      background: rgba(10, 15, 28, 0.95);
       border-radius: var(--radius);
-      border: 1px solid rgba(212,184,124,0.32);
-      box-shadow: 0 10px 28px rgba(0,0,0,0.5);
-    }
-
-    .card h3 {
-      font-family: var(--serif);
-      color: var(--gold);
-      font-size: 1.25rem;
-      margin-bottom: 6px;
-    }
-
-    .card p {
-      color: var(--text-muted);
-      line-height: 1.55;
-      margin-bottom: 8px;
+      border: 1px solid rgba(212,184,124,0.4);
+      padding: 18px 18px 16px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.65);
       font-size: 0.95rem;
     }
 
-    .card a {
+    .timeline-card h3 {
+      font-family: var(--serif);
+      font-size: 1.2rem;
       color: var(--gold);
-      font-weight: 600;
-      text-decoration: none;
+      margin-bottom: 4px;
+    }
+
+    .timeline-card h4 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .timeline-card p {
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 6px;
+    }
+
+    .timeline-card ul {
+      margin: 6px 0 0 16px;
+      color: var(--text-muted);
+      line-height: 1.4;
       font-size: 0.9rem;
     }
 
-    .card a:hover {
-      text-decoration: underline;
+    .timeline-note {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
     }
 
     /* BUTTONS */
@@ -307,9 +319,8 @@
 <header>
   <div class="title">International Wizarding Esports League</div>
   <nav>
-    <a href="#about">About</a>
-    <a href="#nations">Nations</a>
-    <a href="#documents">Documents</a>
+    <a href="#overview">Overview</a>
+    <a href="#timeline">Timeline</a>
     <a href="#signup">Sign Ups</a>
   </nav>
 </header>
@@ -319,117 +330,154 @@
   <!-- Crest file: docs/assets/logo/iwel_crest.png -->
   <img src="assets/logo/iwel_crest.png" alt="IWEL Crest" class="hero-logo">
 
-  <h1>Introducing a New Wizarding Esports League</h1>
-  <h2>Represent Your Nation</h2>
-  <p>Player sign ups are now open for Season 00.</p>
+  <h1>IWEL Season 00</h1>
+  <h2>Founders Season</h2>
+  <p>Player sign ups are now open. Season 00 is a structured, low pressure test run that builds the national rosters for IWEL Season 1.</p>
 </section>
 
-<!-- ABOUT -->
-<section id="about" class="section">
+<!-- IMPORTANT DATES -->
+<section id="overview" class="section dates">
   <div class="section-inner">
-    <div class="section-title">About the league</div>
-    <h2 class="section-heading">What is IWEL?</h2>
+    <div class="section-title">Key dates</div>
+    <h2 class="section-heading">Important dates for Season 00</h2>
     <p class="section-lead">
-      The International Wizarding Esports League is a global, fan run competition framework for
-      Quidditch Champions. IWEL focuses on clear documentation, transparent governance and a safe,
-      competitive environment where players represent nations rather than individual clubs.
-    </p>
-  </div>
-</section>
-
-<!-- NATIONS -->
-<section id="nations" class="section nations">
-  <div class="section-inner">
-    <div class="section-title">Nations</div>
-    <h2 class="section-heading">Represent your nation</h2>
-    <p class="section-lead">
-      When you register for Season 00 you will list your <strong>top three countries</strong> that you would
-      like to represent. Final national team assignments will be made after sign ups close based on
-      competitive balance, roster needs and regional representation.
+      Season 00 is designed so players can commit early, get evaluated fairly and avoid clashing with League 7 sign ups and schedules.
     </p>
 
-    <div class="flag-grid">
-      <!-- Update filenames to match your actual flag files -->
-      <div class="flag-item">
-        <img class="flag-img" src="assets/logo/Country Flags/Australia.png" alt="Australia">
-        <div class="flag-name">Australia</div>
+    <div class="dates-grid">
+      <div class="date-card">
+        <div class="date-label">League sign ups end</div>
+        <div class="date-value">December 21, 2025</div>
       </div>
-      <div class="flag-item">
-        <img class="flag-img" src="assets/logo/Country Flags/Brazil.png" alt="Brazil">
-        <div class="flag-name">Brazil</div>
-      </div>
-      <div class="flag-item">
-        <img class="flag-img" src="assets/logo/Country Flags/Canada.png" alt="Canada">
-        <div class="flag-name">Canada</div>
-      </div>
-      <div class="flag-item">
-        <img class="flag-img" src="assets/logo/Country Flags/China.png" alt="China">
-        <div class="flag-name">China</div>
-      </div>
-      <div class="flag-item">
-        <img class="flag-img" src="assets/logo/Country Flags/France.png" alt="France">
-        <div class="flag-name">France</div>
-      </div>
-      <div class="flag-item">
-        <img class="flag-img" src="assets/logo/Country Flags/Germany.png" alt="Germany">
-        <div class="flag-name">Germany</div>
-      </div>
-      <div class="flag-item">
-        <img class="flag-img" src="assets/logo/Country Flags/India.png" alt="India">
-        <div class="flag-name">India</div>
-      </div>
-      <div class="flag-item">
-        <img class="flag-img" src="assets/logo/Country Flags/Jamaica.png" alt="Jamaica">
-        <div class="flag-name">Jamaica</div>
-      </div>
-      <div class="flag-item">
-        <img class="flag-img" src="assets/logo/Country Flags/Japan.png" alt="Japan">
-        <div class="flag-name">Japan</div>
-      </div>
-      <div class="flag-item">
-        <img class="flag-img" src="assets/logo/Country Flags/Mexico.png" alt="Mexico">
-        <div class="flag-name">Mexico</div>
-      </div>
-      <div class="flag-item">
-        <img class="flag-img" src="assets/logo/Country Flags/UnitedKingdom.png" alt="United Kingdom">
-        <div class="flag-name">United Kingdom</div>
-      </div>
-      <div class="flag-item">
-        <img class="flag-img" src="assets/logo/Country Flags/UnitedStates.png" alt="United States">
-        <div class="flag-name">United States</div>
+      <div class="date-card">
+        <div class="date-label">Season 00 begins</div>
+        <div class="date-value">January 3, 2026</div>
       </div>
     </div>
+
+    <p class="section-lead" style="margin-top:18px;">
+      Players register individually and list their top three countries they would like to represent.
+      Season 00 runs for six weekends across three tryout cycles. Each cycle has:
+    </p>
+    <ul class="section-lead" style="list-style: disc; margin-left: 20px; max-width: 750px;">
+      <li>One weekend of tryouts with temporary teams</li>
+      <li>One week of new sign ups and late registrations</li>
+      <li>One week of planning, squad building and schedule prep</li>
+    </ul>
+    <p class="section-lead" style="margin-top:8px;">
+      Players can be evaluated up to three times, once for each of their nation preferences.
+    </p>
   </div>
 </section>
 
-<!-- DOCUMENTS -->
-<section id="documents" class="section">
+<!-- TIMELINE -->
+<section id="timeline" class="section timeline">
   <div class="section-inner">
-    <div class="section-title">League documents</div>
-    <h2 class="section-heading">Official references</h2>
+    <div class="section-title">Season 00</div>
+    <h2 class="section-heading">Official timeline</h2>
     <p class="section-lead">
-      These documents are the single source of truth for IWEL Season 00. If you are unsure how
-      something works, start here.
+      Below is the full Season 00 structure from the first tryout weekend through the Continental Showcase and the transition into IWEL Season 1.
     </p>
 
-    <div class="card-grid">
-      <div class="card">
-        <h3>Rulebook</h3>
-        <p>Match rules, formats, seeding, tiebreakers and roster regulations for IWEL.</p>
-        <a href="rulebook.html">Open Rulebook</a>
-      </div>
+    <div class="timeline-grid">
+      <!-- Cycle 1 -->
+      <article class="timeline-card">
+        <h3>Cycle 1 - Nation Preference 1</h3>
+        <h4>Weekend 1: January 3 to 4 - Tryout Weekend 1</h4>
+        <p>Players appear under their Nation Choice 1. Temporary teams are formed and captains begin evaluation.</p>
+        <ul>
+          <li>4 round matches</li>
+          <li>Ranking system: +3 win / +1 tie / +0 loss</li>
+          <li>Captains scout and take notes</li>
+        </ul>
+        <h4>Signups Week 1 - Open registration (Jan 5 to 9)</h4>
+        <ul>
+          <li>Late sign ups allowed</li>
+          <li>New players choose their three nations</li>
+          <li>Player list finalized at 11:59 pm on January 9</li>
+        </ul>
+        <h4>Planning Week 1 (Jan 10 to 16)</h4>
+        <ul>
+          <li>Assign players to new tryout squads</li>
+          <li>Build match schedule for Weekend 2</li>
+          <li>Captains review notes and scouting</li>
+          <li>Staff confirm lobby hosts, streamers and refs</li>
+          <li>Players rest</li>
+        </ul>
+      </article>
 
-      <div class="card">
-        <h3>Governance</h3>
-        <p>League structure, councils, committees and how rule changes are proposed and approved.</p>
-        <a href="governance.html">View Governance</a>
-      </div>
+      <!-- Cycle 2 -->
+      <article class="timeline-card">
+        <h3>Cycle 2 - Nation Preference 2</h3>
+        <h4>Weekend 2: January 17 to 18 - Tryout Weekend 2</h4>
+        <p>Players show up for Nation Choice 2 on new squads. Captains look for growth and consistency.</p>
+        <ul>
+          <li>4 round matches</li>
+          <li>Focus on improvement since Cycle 1</li>
+        </ul>
+        <h4>Signups Week 2 - Open registration (Jan 19 to 23)</h4>
+        <ul>
+          <li>Final chance for brand new players to join</li>
+          <li>Anyone who missed Cycle 1 can enter here</li>
+          <li>Sign ups list closes end of day January 23</li>
+        </ul>
+        <h4>Planning Week 2 (Jan 24 to 30)</h4>
+        <ul>
+          <li>Organize squads for Tryout Weekend 3</li>
+          <li>Captains prepare scouting templates</li>
+          <li>Nations refine draft boards</li>
+          <li>Staff finalize stream schedule and referees</li>
+        </ul>
+      </article>
 
-      <div class="card">
-        <h3>Code of Conduct</h3>
-        <p>Expected behavior in matches and community spaces, plus reporting and enforcement flow.</p>
-        <a href="code-of-conduct.html">Read Code of Conduct</a>
-      </div>
+      <!-- Cycle 3 -->
+      <article class="timeline-card">
+        <h3>Cycle 3 - Nation Preference 3</h3>
+        <h4>Weekend 3: January 31 to February 1 - Tryout Weekend 3</h4>
+        <p>Players appear for Nation Choice 3. This is the final evaluation cycle.</p>
+        <ul>
+          <li>4 round matches</li>
+          <li>Last chance for captains to see the full talent pool</li>
+        </ul>
+        <h4>Signups Week 3 - Final open registration (Feb 2 to 6)</h4>
+        <ul>
+          <li>For players who still want to join IWEL Season 1</li>
+          <li>Missed all three tryout cycles</li>
+          <li>Evaluated separately via scrims, interviews or VOD review</li>
+        </ul>
+        <h4>Planning Week 3 (Feb 7 to 13)</h4>
+        <ul>
+          <li>Nations finalize draft boards for IWEL Season 1</li>
+          <li>Captains rank players based on tryout performance</li>
+          <li>Staff prepare Season 1 materials and announcements</li>
+          <li>Teams begin soft branding and flag or crest approvals</li>
+        </ul>
+      </article>
+
+      <!-- Showcase + end of S00 -->
+      <article class="timeline-card">
+        <h3>Season 00 finale and transition</h3>
+        <h4>Feb 14 to 15 - Continental Showcase Weekend (optional)</h4>
+        <p>A final showmatch weekend where nations field preliminary rosters.</p>
+        <ul>
+          <li>Captains test team chemistry</li>
+          <li>Streamed matches build hype</li>
+          <li>Commentary introduces each nation identity</li>
+          <li>No rankings or penalties - pure showcase</li>
+        </ul>
+        <h4>Feb 16 to March 1 - Season 00 wrap up</h4>
+        <ul>
+          <li>Nations submit final Season 1 roster lists</li>
+          <li>Staff finalize Season 1 schedules, graphics and any rule updates</li>
+          <li>Optional formal draft week</li>
+          <li>League 7 likely runs its season, so IWEL pauses official matches</li>
+          <li>Once L7 stabilizes, IWEL Season 1 begins with fully prepared rosters</li>
+        </ul>
+        <p class="timeline-note">
+          The goal of Season 00 is to enter Season 1 fully ready: scouted players, established
+          national identities, a warmed up player base and zero competition with League 7 sign ups.
+        </p>
+      </article>
     </div>
   </div>
 </section>
@@ -446,18 +494,18 @@
     </p>
 
     <div class="btn-row">
-      <a class="btn btn-primary" href="https://forms.gle/uQRpHUwcKvmcSTMp8" target="_blank">
-        Open Player Signup Form
+      <a class="btn btn-primary" href="https://forms.gle/ooZMnpfJ5ADHg7yQ8" target="_blank">
+        Open player signup form
       </a>
       <a class="btn btn-ghost" href="rulebook.html">
-        Review Rules First
+        Review rules first
       </a>
     </div>
   </div>
 </section>
 
 <footer>
-  © International Wizarding Esports League — Hosted on GitHub.
+  © International Wizarding Esports League - Hosted on GitHub.
 </footer>
 
 </body>
