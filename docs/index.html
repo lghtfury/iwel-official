@@ -1,1 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>International Wizarding Esports League (IWEL)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+:root {
+  --navy: #0a0f1c;
+  --navy-light: #121a2c;
+  --gold: #d4b87c;
+  --gold-soft: rgba(212,184,124,0.35);
+  --text-main: #f5f3e8;
+  --text-muted: #cfcaba;
+  --serif: "Cinzel", "Times New Roman", serif;
+  --sans: "Inter", Arial, sans-serif;
+  --radius: 12px;
+}
+
+body {
+  margin: 0;
+  background: var(--navy);
+  color: var(--text-main);
+  font-family: var(--sans);
+}
+
+/* HEADER NAV */
+header {
+  background: rgba(10,15,28,0.85);
+  backdrop-filter: blur(4px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  padding: 16px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+
+header .title {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+}
+
+nav a {
+  margin-left: 24px;
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 0.95rem;
+}
+nav a:hover {
+  color: var(--gold);
+}
+
+/* HERO SECTION */
+.hero {
+  text-align: center;
+  padding: 100px 25px 70px;
+  background: radial-gradient(circle at top, #162238 0%, #0a0f1c 70%);
+}
+
+.hero-logo {
+  width: 270px;
+  filter: drop-shadow(0 0 12px var(--gold-soft));
+}
+
+.hero h1 {
+  font-family: var(--serif);
+  color: var(--gold);
+  font-size: 2rem;
+  letter-spacing: 0.1em;
+  margin-top: 25px;
+  text-transform: uppercase;
+}
+
+.hero h2 {
+  font-family: var(--serif);
+  color: var(--gold);
+  font-size: 3rem;
+  margin-top: 10px;
+}
+
+.hero p {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+}
+
+/* NATIONS */
+.nations {
+  text-align: center;
+  padding: 60px 25px;
+}
+
+.nations h2 {
+  font-family: var(--serif);
+  font-size: 2.4rem;
+  color: var(--gold);
+  margin-bottom: 15px;
+}
+
+.flag-grid {
+  margin: 35px auto;
+  width: 90%;
+  max-width: 950px;
+  padding: 25px;
+  border-radius: var(--radius);
+  border: 2px solid var(--gold);
+  background: white;
+}
+
+.flag-grid img {
+  width: 100%;
+  display: block;
+}
+
+/* INFO CARDS */
+.sections {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 25px;
+}
+
+.card-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.card {
+  background: var(--navy-light);
+  padding: 25px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(212,184,124,0.25);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+.card h3 {
+  font-family: var(--serif);
+  color: var(--gold);
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5rem;
+}
+
+.card a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  background: #050812;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="title">International Wizarding Esports League</div>
+  <nav>
+    <a href="#nations">Nations</a>
+    <a href="#docs">Documents</a>
+    <a href="#signup">Sign Ups</a>
+  </nav>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <!-- ⭐ UPDATE THIS IMAGE PATH AFTER UPLOADING YOUR LOGO -->
+  <img src="assets/logo/IWELBanner.png" alt="IWEL Logo" class="hero-logo">
+
+  <h1>Introducing a New Wizarding Esports League</h1>
+  <h2>Represent Your Nation</h2>
+  <p>Official Sign Ups Are Now Open</p>
+</section>
+
+<!-- NATIONS -->
+<section id="nations" class="nations">
+  <h2>Nations of IWEL</h2>
+
+  <div class="flag-grid">
+    <!-- ⭐ Replace this with your actual flag grid image or individual flags -->
+    <img src="assets/flags/flag-grid-placeholder.png" alt="Available Nations">
+  </div>
+</section>
+
+<!-- DOCUMENTS -->
+<section id="docs" class="sections">
+  <div class="card-grid">
+
+    <div class="card">
+      <h3>Rulebook</h3>
+      <p>All official regulations, competitive standards, and match structures for IWEL.</p>
+      <a href="rulebook.html">Open Rulebook →</a>
+    </div>
+
+    <div class="card">
+      <h3>Governance</h3>
+      <p>Learn how IWEL is organized, how decisions are made, and how seasonal operations work.</p>
+      <a href="governance.html">View Governance →</a>
+    </div>
+
+    <div class="card">
+      <h3>Code of Conduct</h3>
+      <p>The behavioral expectations for players, captains, staff, and community members.</p>
+      <a href="code-of-conduct.html">Read Code of Conduct →</a>
+    </div>
+
+    <div class="card" id="signup">
+      <h3>Sign Ups</h3>
+      <p>Register your nation and compete in Season 1 of the International Wizarding Esports League.</p>
+      <a href="YOUR-SIGNUP-LINK-HERE" target="_blank">Register Now →</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © International Wizarding Esports League. All Rights Reserved.
+</footer>
+
+</body>
+</html>
 
