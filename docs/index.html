@@ -1,308 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>International Wizarding Esports League (IWEL)</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>International Wizarding Esports League (IWEL)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<style>
-:root {
-  --navy: #0a0f1c;
-  --navy-light: #121a2c;
-  --navy-alt: #101728;
-  --gold: #d4b87c;
-  --gold-soft: rgba(212,184,124,0.35);
-  --text-main: #f5f3e8;
-  --text-muted: #cfcaba;
-  --serif: "Cinzel", "Times New Roman", serif;
-  --sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --radius: 12px;
-}
+  <style>
+    :root {
+      --navy: #0a0f1c;
+      --navy-light: #121a2c;
+      --navy-alt: #101728;
+      --gold: #d4b87c;
+      --gold-soft: rgba(212,184,124,0.35);
+      --text-main: #f5f3e8;
+      --text-muted: #cfcaba;
+      --serif: "Cinzel", "Times New Roman", serif;
+      --sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --radius: 12px;
+    }
 
-/* RESET */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-body {
-  background: radial-gradient(circle at top, #18233b 0, #050814 60%);
-  color: var(--text-main);
-  font-family: var(--sans);
-}
+    body {
+      background: radial-gradient(circle at top, #18233b 0, #050814 60%);
+      color: var(--text-main);
+      font-family: var(--sans);
+    }
 
-/* HEADER NAV */
-header {
-  background: rgba(5, 8, 20, 0.9);
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  padding: 12px 28px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 20;
-}
+    /* HEADER NAV */
 
-header .title {
-  font-family: var(--serif);
-  font-size: 1.2rem;
-  color: var(--gold);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
+    header {
+      background: rgba(5, 8, 20, 0.9);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 12px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
 
-nav {
-  display: flex;
-  gap: 18px;
-  font-size: 0.92rem;
-}
+    header .title {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
 
-nav a {
-  text-decoration: none;
-  color: var(--text-main);
-  position: relative;
-  padding-bottom: 2px;
-}
+    nav {
+      display: flex;
+      gap: 18px;
+      font-size: 0.92rem;
+    }
 
-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--gold), #ffffff);
-  transition: width 0.16s ease-out;
-}
+    nav a {
+      text-decoration: none;
+      color: var(--text-main);
+      position: relative;
+      padding-bottom: 2px;
+    }
 
-nav a:hover {
-  color: var(--gold);
-}
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), #ffffff);
+      transition: width 0.16s ease-out;
+    }
 
-nav a:hover::after {
-  width: 100%;
-}
+    nav a:hover {
+      color: var(--gold);
+    }
 
-/* HERO SECTION */
-.hero {
-  text-align: center;
-  padding: 90px 20px 70px;
-}
+    nav a:hover::after {
+      width: 100%;
+    }
 
-.hero-logo {
-  width: 260px;
-  max-width: 70%;
-  filter: drop-shadow(0 0 18px var(--gold-soft));
-  border-radius: 50%;
-}
+    /* HERO */
 
-.hero h1 {
-  font-family: var(--serif);
-  color: var(--gold);
-  font-size: 1.9rem;
-  letter-spacing: 0.12em;
-  margin-top: 25px;
-  text-transform: uppercase;
-}
+    .hero {
+      text-align: center;
+      padding: 90px 20px 70px;
+    }
 
-.hero h2 {
-  font-family: var(--serif);
-  color: var(--gold);
-  font-size: 2.8rem;
-  margin-top: 10px;
-}
+    .hero-logo {
+      width: 260px;
+      max-width: 70%;
+      filter: drop-shadow(0 0 18px var(--gold-soft));
+    }
 
-.hero p {
-  color: var(--text-muted);
-  font-size: 1.1rem;
-  margin-top: 10px;
-}
+    .hero h1 {
+      font-family: var(--serif);
+      color: var(--gold);
+      font-size: 1.9rem;
+      letter-spacing: 0.12em;
+      margin-top: 25px;
+      text-transform: uppercase;
+    }
 
-/* GENERIC SECTION WRAPPER */
-.section {
-  padding: 50px 24px;
-}
+    .hero h2 {
+      font-family: var(--serif);
+      color: var(--gold);
+      font-size: 2.8rem;
+      margin-top: 10px;
+    }
 
-.section-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-}
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-top: 10px;
+    }
 
-.section-title {
-  font-family: var(--serif);
-  font-size: 0.9rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 6px;
-}
+    /* SECTIONS */
 
-.section-heading {
-  font-family: var(--serif);
-  font-size: 2rem;
-  color: var(--gold);
-  margin-bottom: 10px;
-}
+    .section {
+      padding: 50px 24px;
+    }
 
-.section-lead {
-  max-width: 650px;
-  color: var(--text-muted);
-  font-size: 0.98rem;
-  line-height: 1.6;
-}
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
 
-/* NATIONS SECTION WITH CSS GRID */
-.nations {
-  background: radial-gradient(circle at top, #18233f 0, #050814 60%);
-}
+    .section-title {
+      font-family: var(--serif);
+      font-size: 0.9rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
 
-.flag-grid {
-  margin-top: 28px;
-  background: #ffffff;
-  border-radius: var(--radius);
-  border: 2px solid var(--gold);
-  padding: 18px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
-  gap: 14px;
-}
+    .section-heading {
+      font-family: var(--serif);
+      font-size: 2rem;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
 
-.flag-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+    .section-lead {
+      max-width: 650px;
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
 
-.flag-img {
-  width: 100%;
-  border-radius: 4px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-}
+    /* FLAG GRID */
 
-.flag-name {
-  margin-top: 4px;
-  font-size: 0.78rem;
-  text-align: center;
-  color: #222222;
-}
+    .nations {
+      background: radial-gradient(circle at top, #18233f 0, #050814 60%);
+    }
 
-/* INFO CARDS (ABOUT + DOCS) */
-.card-grid {
-  margin-top: 26px;
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-}
+    .flag-grid {
+      margin-top: 28px;
+      background: #ffffff;
+      border-radius: var(--radius);
+      border: 2px solid var(--gold);
+      padding: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+      gap: 14px;
+    }
 
-.card {
-  background: var(--navy-light);
-  padding: 20px 18px 16px;
-  border-radius: var(--radius);
-  border: 1px solid rgba(212,184,124,0.32);
-  box-shadow: 0 10px 28px rgba(0,0,0,0.5);
-  font-size: 0.94rem;
-}
+    .flag-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-.card h3 {
-  font-family: var(--serif);
-  color: var(--gold);
-  font-size: 1.25rem;
-  margin-bottom: 6px;
-}
+    .flag-img {
+      width: 100%;
+      border-radius: 4px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    }
 
-.card p {
-  color: var(--text-muted);
-  line-height: 1.55;
-  margin-bottom: 8px;
-}
+    .flag-name {
+      margin-top: 4px;
+      font-size: 0.78rem;
+      text-align: center;
+      color: #222222;
+    }
 
-.card a {
-  color: var(--gold);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
+    /* CARDS */
 
-.card a:hover {
-  text-decoration: underline;
-}
+    .card-grid {
+      margin-top: 26px;
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
 
-/* BUTTONS */
-.btn-row {
-  margin-top: 22px;
-}
+    .card {
+      background: var(--navy-light);
+      padding: 20px 18px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(212,184,124,0.32);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.5);
+    }
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 9px 18px;
-  border-radius: 999px;
-  font-size: 0.95rem;
-  text-decoration: none;
-  border: 1px solid transparent;
-  cursor: pointer;
-  transition: transform 0.16s ease-out, box-shadow 0.16s ease-out,
-              background 0.16s ease-out, border-color 0.16s ease-out,
-              color 0.16s ease-out;
-  white-space: nowrap;
-}
+    .card h3 {
+      font-family: var(--serif);
+      color: var(--gold);
+      font-size: 1.25rem;
+      margin-bottom: 6px;
+    }
 
-.btn-primary {
-  background: linear-gradient(120deg, var(--gold), #ffffff);
-  color: #050814;
-  font-weight: 600;
-  box-shadow: 0 16px 36px rgba(0,0,0,0.7);
-}
+    .card p {
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
 
-.btn-primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 22px 48px rgba(0,0,0,0.8);
-}
+    .card a {
+      color: var(--gold);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
 
-.btn-ghost {
-  background: var(--navy-alt);
-  border-color: rgba(255,255,255,0.25);
-  color: var(--text-main);
-  margin-left: 10px;
-}
+    .card a:hover {
+      text-decoration: underline;
+    }
 
-.btn-ghost:hover {
-  border-color: var(--gold);
-}
+    /* BUTTONS */
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 18px 20px;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  background: #050812;
-  border-top: 1px solid rgba(255,255,255,0.08);
-}
+    .btn-row {
+      margin-top: 22px;
+    }
 
-footer a {
-  color: var(--gold);
-  text-decoration: none;
-}
+    .btn {
+      padding: 10px 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 0.95rem;
+      cursor: pointer;
+      white-space: nowrap;
+    }
 
-footer a:hover {
-  text-decoration: underline;
-}
+    .btn-primary {
+      background: linear-gradient(120deg, var(--gold), #ffffff);
+      color: #050814;
+      font-weight: 600;
+    }
 
-/* RESPONSIVE TWEAKS */
-@media (max-width: 720px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-}
-</style>
+    .btn-ghost {
+      background: var(--navy-alt);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: var(--text-main);
+      margin-left: 10px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+      padding: 18px 20px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      background: #050812;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 720px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .btn-ghost {
+        display: inline-block;
+        margin-left: 0;
+        margin-top: 10px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -313,74 +310,46 @@ footer a:hover {
     <a href="#about">About</a>
     <a href="#nations">Nations</a>
     <a href="#documents">Documents</a>
-    <a href="#signup">Sign ups</a>
+    <a href="#signup">Sign Ups</a>
   </nav>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-  <!-- Crest: make sure this file exists at docs/assets/logo/IWELBanner.png -->
-  <img src="assets/logo/IWELBanner.png" alt="IWEL Logo" class="hero-logo">
+  <!-- Crest file: docs/assets/logo/iwel_crest.png -->
+  <img src="assets/logo/iwel_crest.png" alt="IWEL Crest" class="hero-logo">
 
   <h1>Introducing a New Wizarding Esports League</h1>
   <h2>Represent Your Nation</h2>
-  <p>Sign ups are now open for Season 1.</p>
+  <p>Player sign ups are now open for Season 00.</p>
 </section>
 
 <!-- ABOUT -->
 <section id="about" class="section">
   <div class="section-inner">
     <div class="section-title">About the league</div>
-    <h2 class="section-heading">What is IWEL</h2>
+    <h2 class="section-heading">What is IWEL?</h2>
     <p class="section-lead">
       The International Wizarding Esports League is a global, fan run competition framework for
       Quidditch Champions. IWEL focuses on clear documentation, transparent governance and a safe,
-      competitive environment where teams represent their nations on an international stage.
+      competitive environment where players represent nations rather than individual clubs.
     </p>
-
-    <div class="card-grid" style="margin-top:20px;">
-      <article class="card">
-        <h3>Global structure</h3>
-        <p>
-          Teams compete while representing a national banner. Formats, seeding rules and tiebreakers
-          are documented up front so captains know exactly what they are playing for.
-        </p>
-      </article>
-      <article class="card">
-        <h3>Written governance</h3>
-        <p>
-          Decision making lives in public documents. Leadership roles, committees and rule change
-          procedures are laid out in writing instead of handled behind closed doors.
-        </p>
-      </article>
-      <article class="card">
-        <h3>Player safety</h3>
-        <p>
-          A Code of Conduct, enforcement guidelines and appeals process define how IWEL handles
-          reports and protects players, staff and the wider community.
-        </p>
-      </article>
-    </div>
   </div>
 </section>
 
-<!-- NATIONS WITH CSS GRID -->
+<!-- NATIONS -->
 <section id="nations" class="section nations">
   <div class="section-inner">
     <div class="section-title">Nations</div>
     <h2 class="section-heading">Represent your nation</h2>
     <p class="section-lead">
-      Players register under a national banner. The grid below shows some of the countries
-      eligible for representation in IWEL Season 1. This list can grow as the league expands.
+      When you register for Season 00 you will list your <strong>top three countries</strong> that you would
+      like to represent. Final national team assignments will be made after sign ups close based on
+      competitive balance, roster needs and regional representation.
     </p>
 
     <div class="flag-grid">
-      <!--
-        Image paths assume your flags live in:
-        docs/assets/logo/Country Flags/
-
-        Change the filenames below to match your actual files.
-      -->
+      <!-- Update filenames to match your actual flag files -->
       <div class="flag-item">
         <img class="flag-img" src="assets/logo/Country Flags/Australia.png" alt="Australia">
         <div class="flag-name">Australia</div>
@@ -439,57 +408,56 @@ footer a:hover {
     <div class="section-title">League documents</div>
     <h2 class="section-heading">Official references</h2>
     <p class="section-lead">
-      These documents are the single source of truth for IWEL. If you are unsure about how
+      These documents are the single source of truth for IWEL Season 00. If you are unsure how
       something works, start here.
     </p>
 
-    <div class="card-grid" style="margin-top:22px;">
-      <article class="card">
+    <div class="card-grid">
+      <div class="card">
         <h3>Rulebook</h3>
-        <p>Match rules, formats, seeding, tiebreakers and roster regulations for IWEL seasons.</p>
-        <a href="rulebook.html">Open rulebook</a>
-      </article>
+        <p>Match rules, formats, seeding, tiebreakers and roster regulations for IWEL.</p>
+        <a href="rulebook.html">Open Rulebook</a>
+      </div>
 
-      <article class="card">
+      <div class="card">
         <h3>Governance</h3>
-        <p>League structure, councils, voting procedures and how rule changes are proposed.</p>
-        <a href="governance.html">View governance</a>
-      </article>
+        <p>League structure, councils, committees and how rule changes are proposed and approved.</p>
+        <a href="governance.html">View Governance</a>
+      </div>
 
-      <article class="card">
+      <div class="card">
         <h3>Code of Conduct</h3>
-        <p>Expected behavior in matches and league spaces, along with reporting and enforcement.</p>
+        <p>Expected behavior in matches and community spaces, plus reporting and enforcement flow.</p>
         <a href="code-of-conduct.html">Read Code of Conduct</a>
-      </article>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- SIGNUP -->
+<!-- SIGNUPS -->
 <section id="signup" class="section">
   <div class="section-inner">
     <div class="section-title">Sign ups</div>
-    <h2 class="section-heading">Join IWEL</h2>
+    <h2 class="section-heading">Sign up for Season 00</h2>
     <p class="section-lead">
-      Sign ups for Season 1 are open to teams that agree to the rulebook and Code of Conduct.
-      Captains should submit a full roster and confirm the nation they will represent.
+      Players register individually for IWEL Season 00. In the form you will provide your contact
+      information, ranked country preferences and basic competitive background. After registrations
+      close the league office will finalize national rosters and announce team selections.
     </p>
 
     <div class="btn-row">
-      <!-- Replace the URL below with your actual signup form link -->
-      <a class="btn btn-primary" href="https://example.com/iwel-signup" target="_blank">
-        Go to signup form
+      <a class="btn btn-primary" href="https://forms.gle/uQRpHUwcKvmcSTMp8" target="_blank">
+        Open Player Signup Form
       </a>
       <a class="btn btn-ghost" href="rulebook.html">
-        Review rules first
+        Review Rules First
       </a>
     </div>
   </div>
 </section>
 
 <footer>
-  © International Wizarding Esports League. Site hosted on
-  <a href="https://github.com/lightfury/iwel-official" target="_blank">GitHub</a>.
+  © International Wizarding Esports League — Hosted on GitHub.
 </footer>
 
 </body>
