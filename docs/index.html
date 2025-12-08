@@ -9,69 +9,101 @@
 :root {
   --navy: #0a0f1c;
   --navy-light: #121a2c;
+  --navy-alt: #101728;
   --gold: #d4b87c;
   --gold-soft: rgba(212,184,124,0.35);
   --text-main: #f5f3e8;
   --text-muted: #cfcaba;
   --serif: "Cinzel", "Times New Roman", serif;
-  --sans: "Inter", Arial, sans-serif;
+  --sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --radius: 12px;
 }
 
-body {
+/* RESET */
+* {
+  box-sizing: border-box;
   margin: 0;
-  background: var(--navy);
+  padding: 0;
+}
+
+body {
+  background: radial-gradient(circle at top, #18233b 0, #050814 60%);
   color: var(--text-main);
   font-family: var(--sans);
 }
 
 /* HEADER NAV */
 header {
-  background: rgba(10,15,28,0.85);
-  backdrop-filter: blur(4px);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  padding: 16px 40px;
+  background: rgba(5, 8, 20, 0.9);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 12px 28px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: sticky;
   top: 0;
+  z-index: 20;
 }
 
 header .title {
   font-family: var(--serif);
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: var(--gold);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+nav {
+  display: flex;
+  gap: 18px;
+  font-size: 0.92rem;
 }
 
 nav a {
-  margin-left: 24px;
   text-decoration: none;
   color: var(--text-main);
-  font-size: 0.95rem;
+  position: relative;
+  padding-bottom: 2px;
 }
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), #ffffff);
+  transition: width 0.16s ease-out;
+}
+
 nav a:hover {
   color: var(--gold);
+}
+
+nav a:hover::after {
+  width: 100%;
 }
 
 /* HERO SECTION */
 .hero {
   text-align: center;
-  padding: 100px 25px 70px;
-  background: radial-gradient(circle at top, #162238 0%, #0a0f1c 70%);
+  padding: 90px 20px 70px;
 }
 
 .hero-logo {
-  width: 270px;
-  filter: drop-shadow(0 0 12px var(--gold-soft));
+  width: 260px;
+  max-width: 70%;
+  filter: drop-shadow(0 0 18px var(--gold-soft));
+  border-radius: 50%;
 }
 
 .hero h1 {
   font-family: var(--serif);
   color: var(--gold);
-  font-size: 2rem;
-  letter-spacing: 0.1em;
+  font-size: 1.9rem;
+  letter-spacing: 0.12em;
   margin-top: 25px;
   text-transform: uppercase;
 }
@@ -79,97 +111,197 @@ nav a:hover {
 .hero h2 {
   font-family: var(--serif);
   color: var(--gold);
-  font-size: 3rem;
+  font-size: 2.8rem;
   margin-top: 10px;
 }
 
 .hero p {
   color: var(--text-muted);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  margin-top: 10px;
 }
 
-/* NATIONS */
-.nations {
-  text-align: center;
-  padding: 60px 25px;
+/* GENERIC SECTION WRAPPER */
+.section {
+  padding: 50px 24px;
 }
 
-.nations h2 {
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-title {
   font-family: var(--serif);
-  font-size: 2.4rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.section-heading {
+  font-family: var(--serif);
+  font-size: 2rem;
   color: var(--gold);
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+}
+
+.section-lead {
+  max-width: 650px;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+/* NATIONS SECTION WITH CSS GRID */
+.nations {
+  background: radial-gradient(circle at top, #18233f 0, #050814 60%);
 }
 
 .flag-grid {
-  margin: 35px auto;
-  width: 90%;
-  max-width: 950px;
-  padding: 25px;
+  margin-top: 28px;
+  background: #ffffff;
   border-radius: var(--radius);
   border: 2px solid var(--gold);
-  background: white;
-}
-
-.flag-grid img {
-  width: 100%;
-  display: block;
-}
-
-/* INFO CARDS */
-.sections {
-  max-width: 1100px;
-  margin: 60px auto;
-  padding: 0 25px;
-}
-
-.card-grid {
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   display: grid;
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 14px;
+}
+
+.flag-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flag-img {
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.flag-name {
+  margin-top: 4px;
+  font-size: 0.78rem;
+  text-align: center;
+  color: #222222;
+}
+
+/* INFO CARDS (ABOUT + DOCS) */
+.card-grid {
+  margin-top: 26px;
+  display: grid;
+  gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
 .card {
   background: var(--navy-light);
-  padding: 25px;
+  padding: 20px 18px 16px;
   border-radius: var(--radius);
-  border: 1px solid rgba(212,184,124,0.25);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  border: 1px solid rgba(212,184,124,0.32);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.5);
+  font-size: 0.94rem;
 }
 
 .card h3 {
   font-family: var(--serif);
   color: var(--gold);
-  font-size: 1.4rem;
-  margin-bottom: 10px;
+  font-size: 1.25rem;
+  margin-bottom: 6px;
 }
 
 .card p {
   color: var(--text-muted);
-  font-size: 0.95rem;
-  line-height: 1.5rem;
+  line-height: 1.55;
+  margin-bottom: 8px;
 }
 
 .card a {
   color: var(--gold);
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 
 .card a:hover {
   text-decoration: underline;
 }
 
+/* BUTTONS */
+.btn-row {
+  margin-top: 22px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 18px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.16s ease-out, box-shadow 0.16s ease-out,
+              background 0.16s ease-out, border-color 0.16s ease-out,
+              color 0.16s ease-out;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: linear-gradient(120deg, var(--gold), #ffffff);
+  color: #050814;
+  font-weight: 600;
+  box-shadow: 0 16px 36px rgba(0,0,0,0.7);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 22px 48px rgba(0,0,0,0.8);
+}
+
+.btn-ghost {
+  background: var(--navy-alt);
+  border-color: rgba(255,255,255,0.25);
+  color: var(--text-main);
+  margin-left: 10px;
+}
+
+.btn-ghost:hover {
+  border-color: var(--gold);
+}
+
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 20px;
-  font-size: 0.9rem;
+  padding: 18px 20px;
+  font-size: 0.85rem;
   color: var(--text-muted);
   background: #050812;
   border-top: 1px solid rgba(255,255,255,0.08);
 }
 
+footer a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* RESPONSIVE TWEAKS */
+@media (max-width: 720px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
 </style>
 </head>
 
@@ -178,67 +310,187 @@ footer {
 <header>
   <div class="title">International Wizarding Esports League</div>
   <nav>
+    <a href="#about">About</a>
     <a href="#nations">Nations</a>
-    <a href="#docs">Documents</a>
-    <a href="#signup">Sign Ups</a>
+    <a href="#documents">Documents</a>
+    <a href="#signup">Sign ups</a>
   </nav>
 </header>
 
-<!-- HERO SECTION -->
+<!-- HERO -->
 <section class="hero">
-  <!-- ⭐ UPDATE THIS IMAGE PATH AFTER UPLOADING YOUR LOGO -->
+  <!-- Crest: make sure this file exists at docs/assets/logo/IWELBanner.png -->
   <img src="assets/logo/IWELBanner.png" alt="IWEL Logo" class="hero-logo">
 
   <h1>Introducing a New Wizarding Esports League</h1>
   <h2>Represent Your Nation</h2>
-  <p>Official Sign Ups Are Now Open</p>
+  <p>Sign ups are now open for Season 1.</p>
 </section>
 
-<!-- NATIONS -->
-<section id="nations" class="nations">
-  <h2>Nations of IWEL</h2>
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="section-inner">
+    <div class="section-title">About the league</div>
+    <h2 class="section-heading">What is IWEL</h2>
+    <p class="section-lead">
+      The International Wizarding Esports League is a global, fan run competition framework for
+      Quidditch Champions. IWEL focuses on clear documentation, transparent governance and a safe,
+      competitive environment where teams represent their nations on an international stage.
+    </p>
 
-  <div class="flag-grid">
-    <!-- ⭐ Replace this with your actual flag grid image or individual flags -->
-    <img src="assets/flags/flag-grid-placeholder.png" alt="Available Nations">
+    <div class="card-grid" style="margin-top:20px;">
+      <article class="card">
+        <h3>Global structure</h3>
+        <p>
+          Teams compete while representing a national banner. Formats, seeding rules and tiebreakers
+          are documented up front so captains know exactly what they are playing for.
+        </p>
+      </article>
+      <article class="card">
+        <h3>Written governance</h3>
+        <p>
+          Decision making lives in public documents. Leadership roles, committees and rule change
+          procedures are laid out in writing instead of handled behind closed doors.
+        </p>
+      </article>
+      <article class="card">
+        <h3>Player safety</h3>
+        <p>
+          A Code of Conduct, enforcement guidelines and appeals process define how IWEL handles
+          reports and protects players, staff and the wider community.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- NATIONS WITH CSS GRID -->
+<section id="nations" class="section nations">
+  <div class="section-inner">
+    <div class="section-title">Nations</div>
+    <h2 class="section-heading">Represent your nation</h2>
+    <p class="section-lead">
+      Players register under a national banner. The grid below shows some of the countries
+      eligible for representation in IWEL Season 1. This list can grow as the league expands.
+    </p>
+
+    <div class="flag-grid">
+      <!--
+        Image paths assume your flags live in:
+        docs/assets/logo/Country Flags/
+
+        Change the filenames below to match your actual files.
+      -->
+      <div class="flag-item">
+        <img class="flag-img" src="assets/logo/Country Flags/Australia.png" alt="Australia">
+        <div class="flag-name">Australia</div>
+      </div>
+      <div class="flag-item">
+        <img class="flag-img" src="assets/logo/Country Flags/Brazil.png" alt="Brazil">
+        <div class="flag-name">Brazil</div>
+      </div>
+      <div class="flag-item">
+        <img class="flag-img" src="assets/logo/Country Flags/Canada.png" alt="Canada">
+        <div class="flag-name">Canada</div>
+      </div>
+      <div class="flag-item">
+        <img class="flag-img" src="assets/logo/Country Flags/China.png" alt="China">
+        <div class="flag-name">China</div>
+      </div>
+      <div class="flag-item">
+        <img class="flag-img" src="assets/logo/Country Flags/France.png" alt="France">
+        <div class="flag-name">France</div>
+      </div>
+      <div class="flag-item">
+        <img class="flag-img" src="assets/logo/Country Flags/Germany.png" alt="Germany">
+        <div class="flag-name">Germany</div>
+      </div>
+      <div class="flag-item">
+        <img class="flag-img" src="assets/logo/Country Flags/India.png" alt="India">
+        <div class="flag-name">India</div>
+      </div>
+      <div class="flag-item">
+        <img class="flag-img" src="assets/logo/Country Flags/Jamaica.png" alt="Jamaica">
+        <div class="flag-name">Jamaica</div>
+      </div>
+      <div class="flag-item">
+        <img class="flag-img" src="assets/logo/Country Flags/Japan.png" alt="Japan">
+        <div class="flag-name">Japan</div>
+      </div>
+      <div class="flag-item">
+        <img class="flag-img" src="assets/logo/Country Flags/Mexico.png" alt="Mexico">
+        <div class="flag-name">Mexico</div>
+      </div>
+      <div class="flag-item">
+        <img class="flag-img" src="assets/logo/Country Flags/UnitedKingdom.png" alt="United Kingdom">
+        <div class="flag-name">United Kingdom</div>
+      </div>
+      <div class="flag-item">
+        <img class="flag-img" src="assets/logo/Country Flags/UnitedStates.png" alt="United States">
+        <div class="flag-name">United States</div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- DOCUMENTS -->
-<section id="docs" class="sections">
-  <div class="card-grid">
+<section id="documents" class="section">
+  <div class="section-inner">
+    <div class="section-title">League documents</div>
+    <h2 class="section-heading">Official references</h2>
+    <p class="section-lead">
+      These documents are the single source of truth for IWEL. If you are unsure about how
+      something works, start here.
+    </p>
 
-    <div class="card">
-      <h3>Rulebook</h3>
-      <p>All official regulations, competitive standards, and match structures for IWEL.</p>
-      <a href="rulebook.html">Open Rulebook →</a>
+    <div class="card-grid" style="margin-top:22px;">
+      <article class="card">
+        <h3>Rulebook</h3>
+        <p>Match rules, formats, seeding, tiebreakers and roster regulations for IWEL seasons.</p>
+        <a href="rulebook.html">Open rulebook</a>
+      </article>
+
+      <article class="card">
+        <h3>Governance</h3>
+        <p>League structure, councils, voting procedures and how rule changes are proposed.</p>
+        <a href="governance.html">View governance</a>
+      </article>
+
+      <article class="card">
+        <h3>Code of Conduct</h3>
+        <p>Expected behavior in matches and league spaces, along with reporting and enforcement.</p>
+        <a href="code-of-conduct.html">Read Code of Conduct</a>
+      </article>
     </div>
+  </div>
+</section>
 
-    <div class="card">
-      <h3>Governance</h3>
-      <p>Learn how IWEL is organized, how decisions are made, and how seasonal operations work.</p>
-      <a href="governance.html">View Governance →</a>
+<!-- SIGNUP -->
+<section id="signup" class="section">
+  <div class="section-inner">
+    <div class="section-title">Sign ups</div>
+    <h2 class="section-heading">Join IWEL</h2>
+    <p class="section-lead">
+      Sign ups for Season 1 are open to teams that agree to the rulebook and Code of Conduct.
+      Captains should submit a full roster and confirm the nation they will represent.
+    </p>
+
+    <div class="btn-row">
+      <!-- Replace the URL below with your actual signup form link -->
+      <a class="btn btn-primary" href="https://example.com/iwel-signup" target="_blank">
+        Go to signup form
+      </a>
+      <a class="btn btn-ghost" href="rulebook.html">
+        Review rules first
+      </a>
     </div>
-
-    <div class="card">
-      <h3>Code of Conduct</h3>
-      <p>The behavioral expectations for players, captains, staff, and community members.</p>
-      <a href="code-of-conduct.html">Read Code of Conduct →</a>
-    </div>
-
-    <div class="card" id="signup">
-      <h3>Sign Ups</h3>
-      <p>Register your nation and compete in Season 1 of the International Wizarding Esports League.</p>
-      <a href="YOUR-SIGNUP-LINK-HERE" target="_blank">Register Now →</a>
-    </div>
-
   </div>
 </section>
 
 <footer>
-  © International Wizarding Esports League. All Rights Reserved.
+  © International Wizarding Esports League. Site hosted on
+  <a href="https://github.com/lightfury/iwel-official" target="_blank">GitHub</a>.
 </footer>
 
 </body>
 </html>
-
